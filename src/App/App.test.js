@@ -1,9 +1,31 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme'
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('App', () => {
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(<App/>)
+  })
+
+it('should match snapshot', () => {
+    expect(wrapper).toMatchSnapshot()
+})
+
+it('should update state with an order when addOrder is called', () => {
+  const mockOrder = {
+    img: 'URL',
+    name: 'iphone',
+    description: 'one of those phones',
+    price: "500",
+    id: Date.now()
+  }
+  const expected = [mockOrder]
+
+  expect(wrapper.state('orders')).toEqual([])
+  wrapper.instance().addOrder(mockOrder)
+  expect(wrapper.state('orders')).toEqual(expected)
 });
+
+})
