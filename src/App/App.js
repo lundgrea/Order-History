@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import OrderContainer from '../OrderContainer/OrderContainer'
 import Form from '../Form/Form'
+import { postNewOrder } from '../apiCalls'
 import './App.css';
 
 class App extends Component {
@@ -21,7 +22,9 @@ class App extends Component {
   }
 
   addOrder = (newOrder)=> {
-    this.setState({orders: [...this.state.orders, newOrder]})
+    postNewOrder(newOrder)
+    .then(order => this.setState({orders: [...this.state.orders, newOrder]}))
+    .catch(error => this.setState({error : error.message}))
   }
 
   componentDidMount() {
