@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import OrderContainer from '../OrderContainer/OrderContainer'
+import Form from '../Form/Form'
 import './App.css';
 
 class App extends Component {
@@ -18,6 +19,11 @@ class App extends Component {
     })
     this.setState({orders: filteredOrders})
   }
+
+  addOrder = (newOrder)=> {
+    this.setState({orders: [...this.state.orders, newOrder]})
+  }
+
   componentDidMount() {
     fetch('http://localhost:3001/api/v1/purchases')
       .then(response => response.json())
@@ -32,7 +38,7 @@ class App extends Component {
         <header>
           <h1 className='app-title'>My Order History</h1>
           <div className='purchase-form'>
-
+            <Form addOrder={this.addOrder}/>
           </div>
         </header>
         <div className='purchase-container'>

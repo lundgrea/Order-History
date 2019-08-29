@@ -7,7 +7,7 @@ const OrderContainer = ({orders, removeOrder}) => {
       <Order
         name={order.name}
         description={order.description}
-        price={order.img}
+        price={order.price}
         img={order.img}
         id={order.id}
         key={order.id}
