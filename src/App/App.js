@@ -32,7 +32,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.orders)
     return (
       <div className="App">
         <header>
