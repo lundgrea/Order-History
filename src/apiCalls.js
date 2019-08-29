@@ -1,7 +1,7 @@
-export const postNewOrder = (newIdea) => {  
+export const postNewOrder = (newOrder) => {  
   const options = {
     method: 'POST',
-    body: JSON.stringify(newIdea),
+    body: JSON.stringify(newOrder),
     headers: {
       'Content-Type': 'application/json'
     }
@@ -9,12 +9,14 @@ export const postNewOrder = (newIdea) => {
   
   return fetch('http://localhost:3001/api/v1/purchases', options)
   .then(response => {
+    console.log(response)
     if(!response.ok) {
-      throw Error('Error posting new idea')
+      throw Error('Error posting new order')
     }
-    response.json()
+    return response.json()
   })
   .catch(error => {
     throw Error(error.message)
   })
 }
+

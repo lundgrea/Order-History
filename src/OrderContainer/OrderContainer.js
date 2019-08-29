@@ -3,7 +3,6 @@ import Order from '../Order/Order'
 
 const OrderContainer = ({orders, removeOrder}) => {
   const listedOrders = orders.map(order => {
-    console.log(order.name)
     return (
       <Order
         name={order.name}
