@@ -13,19 +13,20 @@ it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot()
 })
 
-it('should update state with an order when addOrder is called', () => {
-  const mockOrder = {
-    img: 'URL',
-    name: 'iphone',
-    description: 'one of those phones',
-    price: "500",
-    id: Date.now()
-  }
-  const expected = [mockOrder]
+// it('should update state with an order when addOrder is called', () => {
+//   const mockOrder = {
+//     img: 'URL',
+//     name: 'iphone',
+//     description: 'one of those phones',
+//     price: "500",
+//     id: Date.now()
+//   }
+//   const expected = [mockOrder]
 
-  expect(wrapper.state('orders')).toEqual([])
-  wrapper.instance().addOrder(mockOrder)
-  expect(wrapper.state('orders')).toEqual(expected)
-});
+//   expect(wrapper.state('orders')).toEqual([])
+//   wrapper.instance().addOrder(mockOrder)
+//   expect(wrapper.state('orders')).toEqual(expected)
+
+// });
 
 })
