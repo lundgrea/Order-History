@@ -1,68 +1,59 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Order History UI
 
-## Available Scripts
+This application was built with `create-react-app`.
 
-In the project directory, you can run:
+### Set Up
 
-### `npm start`
+Clone down this repo.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+On GitHub, create a new, empty repository and name it something like 'order-history-fe'.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Update the current remote origin and point it at the new URL of the repository you just created on GitHub. You can read how to do this [here](https://help.github.com/en/articles/changing-a-remotes-url).
 
-### `npm test`
+Once you've updated the remote, you should run `npm install`, commit, and then push your initial commit to your updated remote origin. You might need to use the `-u` flag when you push (like this: `git push -u origin master`).
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Run `npm start` to start up your React server.
 
-### `npm run build`
+### Expectations / Rules
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Build a React App that displays your order history!
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+You will have 3 hours to build out this application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![order-history-screenshot](./assets/order-history-screenshot.png)
 
-### `npm run eject`
+We do want to see good commit habits - atomic commits that log small, focused changesets. Don't worry about creating GitHub issues, though.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Iteration 0
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Pull down the [API repo](https://github.com/turingschool-examples/order-history-api). Set up instructions are in the repository's README.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Iteration 1
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Get all existing purchases on page load and display them on the DOM.
 
-## Learn More
+### Iteration 2
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Create a controlled form component to create a new purchase (look into the API documentation to see what pieces of information are expected, and what datatypes it wants each piece to be).  When the user clicks the `Make Purchase` button, the application should update the App's state.  The new purchase should display with all of the existing purchases.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Iteration 3
 
-### Code Splitting
+Now that the functionality is there, write some tests.  Focus on tests for the UI as well as state changes and simulating events.  For now, you don't have to test everything.  But write two tests of each (6 total).
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Iteration 4
 
-### Analyzing the Bundle Size
+When the user makes a new purchase, the application should make a post request to the API.  The new purchase should still exist upon reloading the page.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+**You may not have any fetch calls in any component other than App!**
 
-### Making a Progressive Web App
+(If you have time to refactor your fetch calls into a separate helper file, that is fine, but it is *NOT* a requirement for this application.)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### Iteration 5
 
-### Advanced Configuration
+Delete a purchase when the user clicks the `Remove From History` button.  The deletion should persist upon reloading the page.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+### Extensions
 
-### Deployment
+* Now try testing your API calls.  Try writing out a few tests including happy path and sad path testing.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* Add a button or drop down so that the user has the option to sort their past purchases by price from least to greatest or greatest to least.
