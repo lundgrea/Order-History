@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Order should match the snapshot with all data passed in correctly 1`] = `
+<section
+  className="card"
+>
+  <img
+    alt="item"
+    className="item_image"
+    src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-xs-max-gold-select-2018?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1550795409154"
+  />
+  <h2
+    className="item_name"
+  >
+    iphone
+  </h2>
+  <h3
+    className="item_price"
+  >
+    300
+  </h3>
+  <p
+    className="item_description"
+  >
+    One of a kind iphone
+  </p>
+  <button
+    className="item_remove-button"
+    onClick={[Function]}
+  >
+    Remove From History
+  </button>
+</section>
+`;
