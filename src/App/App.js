@@ -23,8 +23,9 @@ class App extends Component {
 
   addOrder = (newOrder)=> {
     postNewOrder(newOrder)
-    .then(newOrder => this.setState({orders: [...this.state.orders, newOrder]}))
-    .catch(error => this.setState({error : error.message}))
+    .then(data=> console.log(data))
+    // .then(newOrder => this.setState({orders: [...this.state.orders, newOrder]}))
+    // .catch(error => this.setState({error : error.message}))
   }
 
   componentDidMount() {
