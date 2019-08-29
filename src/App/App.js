@@ -1,7 +1,23 @@
 import React, { Component } from 'react';
+import OrderContainer from '../OrderContainer/OrderContainer'
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      orders: [],
+      isLoading: true,
+      error: ''
+    }
+  }
+  componentDidMount() {
+    fetch('http://localhost:3001/api/v1/purchases')
+      .then(response => response.json())
+      .then(orders => this.setState({orders: orders}))
+      .catch(error => this.setState({error: error.message}))
+  }
+
   render() {
     return (
       <div className="App">
@@ -12,7 +28,7 @@ class App extends Component {
           </div>
         </header>
         <div className='purchase-container'>
-
+          <OrderContainer orders={this.state.orders}/>
         </div>
       </div>
     );
