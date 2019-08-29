@@ -11,6 +11,13 @@ class App extends Component {
       error: ''
     }
   }
+
+  removeOrder = (id) => {
+    const filteredOrders = this.state.orders.filter(order => {
+      return order.id != id
+    })
+    this.setState({orders: filteredOrders})
+  }
   componentDidMount() {
     fetch('http://localhost:3001/api/v1/purchases')
       .then(response => response.json())
@@ -19,6 +26,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.orders)
     return (
       <div className="App">
         <header>
@@ -28,7 +36,7 @@ class App extends Component {
           </div>
         </header>
         <div className='purchase-container'>
-          <OrderContainer orders={this.state.orders}/>
+          <OrderContainer orders={this.state.orders} removeOrder={this.removeOrder}/>
         </div>
       </div>
     );

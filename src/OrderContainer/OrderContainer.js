@@ -1,7 +1,7 @@
 import React from 'react';
 import Order from '../Order/Order'
 
-const OrderContainer = ({orders}) => {
+const OrderContainer = ({orders, removeOrder}) => {
   const listedOrders = orders.map(order => {
     return (
       <Order
@@ -11,6 +11,7 @@ const OrderContainer = ({orders}) => {
         img={order.img}
         id={order.id}
         key={order.id}
+        removeOrder={removeOrder}
       />
     )
   })
