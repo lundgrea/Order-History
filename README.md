@@ -34,7 +34,7 @@ Get all existing purchases on page load and display them on the DOM.
 
 ### Iteration 2
 
-Create a controlled form component to create a new purchase (look into the API documentation to see what pieces of information are expected, and what datatypes it wants each piece to be).  When the user clicks the `Make Purchase` button, the application should update the App's state.  The new purchase should display with all of the existing purchases.
+Create a controlled form component to create a new purchase (look into the API documentation to see what pieces of information are expected, and what datatypes it wants each piece to be).  When the user clicks the `Add Purchase` button, the application should update the App's state.  The new purchase should display with all of the existing purchases.
 
 ### Iteration 3
 
